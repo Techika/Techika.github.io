@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        Buk-o-Blog
+    </title>
+    <!-- <link rel = "icon"        href = "assets/aperture.svg"         type = "image/x-icon"  >  -->
+    <link rel = "stylesheet"  href = "style.css"  >
+</head>
+<script>
+    function testit() {
+        // document.getElementById("Section2-title").className="post";
+        var jpost = document.createElement("div");
+        var jpostTitle = document.createElement("h2");
+        var jpostTitleText = document.createTextNode(document.myform.title.value)
+        var jpostBody = document.createElement("p");
+        var jpostBodyText = document.createTextNode(document.myform.content.value)
+
+        jpost.className ="post";
+        jpostTitle.className ="post-title-text";
+        jpostBody.className ="post-body-text";
+
+        jpostTitle.appendChild(jpostTitleText);
+        jpostBody.appendChild(jpostBodyText);
+
+        jpost.appendChild(jpostTitle);
+        jpost.appendChild(jpostBody);
+
+        document.getElementById("PostsBody").appendChild(jpost);
+        document.myform.reset();
+    }
+</script>
+<body>
+    <nav  class="nav-bar">
+      <div  class="nav-middle align-main">
+          <div  class="">
+            <span ID="Blogtitle"><H1>Buk-O-Blog</H1></span>
+          </div>
+      </div>
+    </nav>
+    
+    <div ID="Content" class="align-main">
+        <!-- Add NEW section -->
+        <div ID="NewPost" class="">
+            <h3 ID="Section1-title" class="section-title">
+                Add new post
+            </h3> 
+            <form name="myform" onsubmit="testit(); return false">
+                <div ID="Input-title" class="">
+                    <label for="title" ID="Input-title-label" class="">
+                        Title
+                    </label><br>
+                    <input type="text" id="Input-title-field" name="title" 
+                    class="post-title-text" value = "Post title" onclick="this.value='' "> 
+                </div>
+                <div ID="Input-content" class="">
+                    <label for="content" ID="Input-content-label" class="">
+                        Content
+                    </label>
+                    <textarea type="text" id="Input-content-field" name="content" rows="5"
+                    class="post-body-text"></textarea>
+                </div>
+                <input ID="Btn-submit" type="submit" value="Submit" >
+                <div  class="">  
+                   <hr> 
+                </div>
+            </form>
+        </div>
+        <!-- History section -->
+        <div ID="PostHistory" class="">
+            <h3 ID="Section2-title" class="section-title">
+                Posts
+            </h3> 
+            <div ID="PostsBody" class="">
+                <div ID="Post1" class="post">
+                    <h2 class="post-title-text">
+                        Lorem 1 ipsum
+                    </h2>
+                    <p class="post-body-text">
+                        sdfasdfasdfsfasfwefeghrthrthtjtjzj
+                    </p>
+                </div>
+                <div ID="Post2" class="post">
+                    <h2 class="post-title-text">
+                        Lorem 2 ipsum
+                    </h2>
+                    <p ID="Post2p" class="post-body-text">
+                        sfasdfsafasfdsfsafsdfdfsadfasfsf
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
